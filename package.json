@@ -1,8 +1,11 @@
 {
   "name": "@jayarjo/scheduler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Schedule a task to execute after some period, regularly with a given interval, just given amount of times, or simply until it succeeds.",
   "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
   "author": "Davit Barbakadze <jayarjo@gmail.com>",
   "license": "MIT",
   "scripts": {
