@@ -1,5 +1,5 @@
 import { random } from './Utils'
-import { EventEmitter } from 'events'
+import EventEmitter from 'events'
 import { Task, TaskSchema, TimeUnits, TaskState } from './Task'
 
 export class Scheduler extends EventEmitter {
