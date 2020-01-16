@@ -51,6 +51,17 @@ describe('Scheduler', () => {
     // jest.advanceTimersByTime(30 * 1000);
   })
 
+  test('runEvery()', done => {
+    const spy = jest.fn(() => Promise.resolve('success'))
+
+    scheduler.runEvery(spy, 1000)
+
+    setTimeout(() => {
+      expect(spy).toHaveBeenCalledTimes(3)
+      done()
+    }, 3000)
+  })
+
   test('addTask(schema)', done => {
     const spy = jest.fn().mockResolvedValue('success')
 

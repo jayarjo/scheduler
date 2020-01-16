@@ -63,15 +63,14 @@ export class Scheduler extends EventEmitter {
 
   runEvery(
     fn: Function,
-    amount: number,
+    interval: number,
     unit?: TimeUnits,
     repeatTimesBeforeFail?
   ): string {
-    const at = Date.now() + (unit ? amount * unit : amount)
     return this.addTask(
       new Task({
         fn,
-        at,
+        interval: unit ? interval * unit : interval,
         repeatTimesBeforeFail
       })
     )
