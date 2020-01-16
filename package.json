@@ -1,0 +1,35 @@
+{
+  "name": "taskscheduler",
+  "version": "1.0.0",
+  "description": "Schedule a task to execute after some period, regularly with a given interval, just given amount of times, or simply until it succeeds.",
+  "main": "lib/index.js",
+  "author": "Davit Barbakadze <jayarjo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --colors --watch",
+    "watch": "tsc -w",
+    "prebuild": "shx rm -rf lib/",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.7",
+    "eslint": "^5.12.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.3.0",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
+    "shx": "^0.3.2",
+    "ts-jest": "^24.3.0",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.4"
+  }
+}
