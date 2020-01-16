@@ -1,6 +1,6 @@
 {
   "name": "@jayarjo/scheduler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Schedule a task to execute after some period, regularly with a given interval, just given amount of times, or simply until it succeeds.",
   "main": "lib/index.js",
   "author": "Davit Barbakadze <jayarjo@gmail.com>",
