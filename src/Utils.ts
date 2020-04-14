@@ -18,12 +18,6 @@ export const guid = (function() {
   }
 })()
 
-export const invariant = (expr, errMsg) => {
-  if (expr) {
-    throw new Error(errMsg)
-  }
-}
-
 export const isPromise = obj => obj && typeof obj.then === 'function'
 
 export const random = (min, max) => {

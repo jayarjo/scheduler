@@ -4,7 +4,7 @@ export enum TaskState {
   IDLE = 'idle',
   RUNNING = 'running',
   SUCCEEDED = 'succeeded',
-  FAILED = 'failed'
+  FAILED = 'failed',
 }
 
 export enum TimeUnits {
@@ -14,15 +14,15 @@ export enum TimeUnits {
   HOUR = TimeUnits.MINUTE * 60,
   DAY = TimeUnits.HOUR * 24,
   MONTH = TimeUnits.DAY * 30,
-  YEAR = TimeUnits.DAY * 365
+  YEAR = TimeUnits.DAY * 365,
 }
 
 export type TaskSchema = {
   fn: Function
   args?: any[]
-  at?: number // timestamp basically
+  at?: number // timestamp
   interval?: number // amount of ms between runs, if 0 - task won't be repeated
-  repeatTimesBeforeFail?: number // for this to work run task should return a Promise
+  repeatTimesBeforeFail?: number // for this to work fn should return a Promise
   onSuccess?: (result: any, task: Task) => void
   onFailure?: (error: Error, task: Task) => void
 }
@@ -81,7 +81,7 @@ export class Task {
       interval: 0,
       repeatTimesBeforeFail: 0,
       onSuccess: () => {},
-      onFailure: () => {}
+      onFailure: () => {},
     }
 
     this.schema = Object.assign(
@@ -101,7 +101,7 @@ export class Task {
       args = [],
       onSuccess,
       onFailure,
-      repeatTimesBeforeFail
+      repeatTimesBeforeFail,
     } = this.schema
 
     if (this._state !== TaskState.IDLE) {
@@ -110,8 +110,8 @@ export class Task {
       )
     }
 
-    const handleCompletion = isOk => {
-      return result => {
+    const handleCompletion = (isOk) => {
+      return (result) => {
         if (isOk) {
           if (this.isOneTime) {
             this._state = TaskState.SUCCEEDED
