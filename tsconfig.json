@@ -7,8 +7,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es2018", "es2018.promise"],
+    "baseUrl": "./src",
     "outDir": "lib/",
-    "baseUrl": "./src"
+    "declaration": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "src/**/*.spec.ts"]
